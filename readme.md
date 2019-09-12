@@ -1,21 +1,24 @@
 # Braun USB-C Power Adapter
-A charger adapter to provide a USB-C interface to 
+A charger adapter to provide a USB-C interface to some of the following products
 
 - Braun
 - Oral-B
 
 Or any other simple 12V charger that consumes less than 500mA. Check your charger or device manual for compatiblity.
 
+![renderIso1]
+
 ## Design
 The stock charger provided with my Oral-B Genius 9000 travel case is rated at 12V and 400mA. The design will be set to match the voltage and exceed the current requirements so it works with as many similar porducts as possible. 
 
 Using the USB 5V avalibilty as more adapter suppourt rather than the 15V and boosting the voltage to 12V from the 5V@3A would provide 800mA with perfect efficency letting us rate our charger safely at 500mA. The 12V profile is also being completely avoided since the 12V profile only existed in the REV 1.0 of the power delivery protocol and is not compatible with current standards. Using the 5V profile also allows us to not need a negotiator and instead just use two passive 5.1K resistors on the CC lines.
 
-![schematic]
-
+![renderIso2]
 
 ### Boost Converter
 The Microchip [MIC2290](http://ww1.microchip.com/downloads/en/DeviceDoc/MIC2290-075A-Switch-PWM-Boost-Regulator-with-Internal-Schottky-Diode-and-Undervoltage-Lockout-DS20006038A.pdf) is a easy to implement boost converter with a intergrated switch and didoe requiring only external passives. A 10uH inductor, some input and output capacitors and resistors to set the output voltage are all that are needed. The 43.2K and 5k resistors are from the example in the datasheet to set the voltage to 12V.
+
+![schematic]
 
 ## BOM
 The bill of materials is availible in [`bom.csv`](bom.csv) and is copied into a table below.
@@ -32,8 +35,20 @@ The bill of materials is availible in [`bom.csv`](bom.csv) and is copied into a 
 
 ## Assembly
 Assembly is all surface mount with componets on one side of the board to make PNP assembly easy.
+
 ![assembly]
 
+## Ordering
+I havent tested the exported gerbers fully, I just upload the KiCad file. 
 
-[assembly]:  /img/assembly.png  "Assembly drawing for component positon"
-[schematic]: /img/schematic.png "Schematic of the circuit"
+0.48 x 0.75 inches (12.1 x 19.1mm)
+
+At OSH Park 3 boards will cost 1.75 USD
+
+![renderTop]
+
+[renderTop]:  /img/renderTop.png   "Render with view from above"
+[renderIso1]: /img/renderIso1.png  "Isoemtric render from connector"
+[renderIso2]: /img/renderIso2.png  "Isometric render from outputs"
+[assembly]:   /img/assembly.png    "Assembly drawing for component positon"
+[schematic]:  /img/schematic.png   "Schematic of the circuit"
