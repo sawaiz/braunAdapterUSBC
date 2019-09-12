@@ -33,6 +33,8 @@ The bill of materials is availible in [`bom.csv`](bom.csv) and is copied into a 
 | R4      | 1   | Yageo        | RC0402FR-074K99L | RES SMD 4.99K OHM 1% 1/16W 0402   |
 | U1      | 1   | Microchip    | MIC2290YML-TR    | IC REG BOOST ADJ 750MA 8MLF       |
 
+It is also availible though [*octopart*](https://octopart.com/bom-tool/Fi5WwdJ5)
+
 ## Assembly
 Assembly is all surface mount with componets on one side of the board to make PNP assembly easy.
 
